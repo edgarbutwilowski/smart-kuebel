@@ -40,7 +40,7 @@ function createQrCode() {
         binqr.innerHTML = "";
 
         new QRCode(binqr, {
-            text: "" + locCode + "&mail=" + eMailAddressString,
+            text: "https://edgarbutwilowski.github.io/smart-kuebel/index.html?code=" + locCode + "&mail=" + eMailAddressString,
             width: 200,
             height: 200,
             colorDark: "#000000",
