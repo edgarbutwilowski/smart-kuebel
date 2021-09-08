@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>SmartKuebel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <style>
+        h1,
+        p {
+            text-align: center;
+            margin: 2em;
+        }
+
+        #mailElement {
+            border: 1px solid black;
+            padding: 1em;
+            background-color: rgb(250, 234, 142);
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <h1>Einen &uuml;berf&uuml;llten M&uuml;lleimer melden</h1>
+    <p>Hallo, der M&uuml;lleimer ist &uuml;berf&uuml;llt? Sie m&ouml;chten das an den Betreiber melden?</p>
+    <p>Dann sind Sie hier genau richtig!</p>
+    <p>Der folgende Knopf &ouml;ffnet eine vorgefertigte E-Mail in Ihrer E-Mail-App. Sie m&uuml;ssen dann nur noch die
+        E-Mail absenden, um die &Uuml;berf&uuml;llung zu melden.</p>
+    <p>
+        <a id="mailElement">MELDUNG PER MAIL</a>
+    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlocationcode/1.0.3/openlocationcode.min.js"></script>
+    <script>
+        let currentUrlString = window.location.href;
+        let currentUrl = new URL(currentUrlString);
+        let locCode = currentUrl.searchParams.get("code");
+        let coord = OpenLocationCode.decode(locCode);
+        let mailElement = document.getElementById("mailElement");
+        locCode = locCode.replace("+", "%252B");
+        mailElement.setAttribute("href", "mailto:postfach@mail.ch?subject=Meldung eines überfüllten öffentlichten Mülleimers&body=Sehr geehrte Damen und Herren%0D%0A%0D%0A" +
+            "Der öffentliche Mülleimer mit der ID " + locCode + " ist überfüllt. Ich würde mich über eine Leerung freuen.%0D%0A" +
+            "Dieser Mülleimer steht an den Koordinaten (WGS84): " + coord.latitudeCenter + " (Breite), " + coord.longitudeCenter + " (Länge).%0D%0A%0D%0A" +
+            "Um die Position in Google Maps zu öffnen klicken Sie bitte hier: https://www.google.com/maps/place/" + locCode + "%0D%0A" +
+            "Freundliche Grüsse%0D%0A" +
+            "Ein aufmerksamer Bürger%0D%0A%0D%0A");
+    </script>
+</body>
+
+</html>

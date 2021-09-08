@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <title>SmartKuebel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/css/ol.css"
+    type="text/css">
+  <style>
+    .mymap {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Einen QR-Code f&uuml;r die M&uuml;lleimer-Entleerung erstellen</h1>
+  <p>Bitte bestimmen Sie durch Klicken oder Ber&uuml;hren in der Karte die Position des M&uuml;lleimers:</p>
+  <div id="mymap" class="mymap"></div>
+  <p>Ausgew&auml;hlte Koordinaten (WGS84): Breitengrad: <span id="latcoord">0.0</span>, L&auml;ngengrad: <span
+      id="loncoord">0.0</span></p>
+  <p>Bitte geben Sie die E-Mail-Adresse des Betreibers ein. Dies ist oft eine Abteilung der Stadtverwaltung. Je
+    passgenauer die E-Mail-Adresse ist, desto besser ist es.</p>
+  <p>
+  <form id="mail_form">
+    <label for="e_mail_address">Betreiber-Mail*:</label>
+    <input type="email" id="e_mail_address">
+    <input onclick="createQrCode()"
+      style="margin: 1em;padding: 1em;background-color: rgb(248, 241, 175);border: gray 1px solid;font-weight: bold;"
+      type="submit" value="QR-Code erstellen">
+  </form>
+  </p>
+  <p></p>
+  <div id="binqr"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openlocationcode/1.0.3/openlocationcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.6.1/build/ol.js"></script>
+<script src="createqr_main.js"></script>
+
+</html>
