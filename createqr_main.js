@@ -5,6 +5,15 @@ mailForm.addEventListener("submit", (event) => {
     event.preventDefault();
 });
 
+let lang = navigator.language || navigator.userLanguage;
+if(lang.startsWith("de")) {
+    document.getElementById("i18n-create-qrcode").innerHTML = "Einen QR-Code f&uuml;r die M&uuml;lleimer-Entleerung erstellen";
+    document.getElementById("i18n-set-position").innerHTML = "Bitte bestimmen Sie durch Klicken oder Ber&uuml;hren in der Karte die Position des M&uuml;lleimers:";
+    document.getElementById("i18n-chosen-coord").innerHTML = "Ausgew&auml;hlte Koordinaten (WGS84): Breitengrad: <span id=\"latcoord\">0.0</span>, L&auml;ngengrad: <span id=\"loncoord\">0.0</span>";
+    document.getElementById("i18n-provide-email").innerHTML = "Bitte geben Sie die E-Mail-Adresse des Betreibers ein. Dies ist oft eine Abteilung der Stadtverwaltung. Je passgenauer die E-Mail-Adresse ist, desto besser ist es.";
+    document.getElementById("i18n-operator-email").innerHTML = "Betreiber-Mail*";
+}
+
 let locCode = null;
 
 let myMap = new ol.Map({

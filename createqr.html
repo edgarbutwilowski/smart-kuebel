@@ -13,17 +13,17 @@
 </head>
 
 <body>
-  <h1>Einen QR-Code f&uuml;r die M&uuml;lleimer-Entleerung erstellen</h1>
-  <p>Bitte bestimmen Sie durch Klicken oder Ber&uuml;hren in der Karte die Position des M&uuml;lleimers:</p>
+  <h1 id="i18n-create-qrcode">Create a QR Code For Emptying the Public Waste Bin</h1>
+  <p id="i18n-set-position">Please determine the position of the public waste bin by clicking into or touching the map:</p>
   <div id="mymap" class="mymap"></div>
-  <p>Ausgew&auml;hlte Koordinaten (WGS84): Breitengrad: <span id="latcoord">0.0</span>, L&auml;ngengrad: <span
+  <p id="i18n-chosen-coord">Coordinates chosen (WGS84): latitude: <span id="latcoord">0.0</span>, longitude: <span
       id="loncoord">0.0</span></p>
-  <p>Bitte geben Sie die E-Mail-Adresse des Betreibers ein. Dies ist oft eine Abteilung der Stadtverwaltung. Je
-    passgenauer die E-Mail-Adresse ist, desto besser ist es.</p>
+  <p id="i18n-provide-email">Please provide the e-mail address of the operator. Often this is a department of the city administration.
+    The more accurate the e-mail address, the better it is.</p>
   <p>
   <form id="mail_form">
-    <label for="e_mail_address">Betreiber-Mail*:</label>
-    <input type="email" id="e_mail_address">
+    <label id="i18n-operator-email" for="e_mail_address">Operator e-mail*:</label>
+    <input type="email" size="30" id="e_mail_address">
     <input onclick="createQrCode()"
       style="margin: 1em;padding: 1em;background-color: rgb(248, 241, 175);border: gray 1px solid;font-weight: bold;"
       type="submit" value="QR-Code erstellen">

@@ -22,15 +22,16 @@
 </head>
 
 <body style="font-family: 'Roboto', sans-serif;">
-    <h1>Einen &uuml;berf&uuml;llten M&uuml;lleimer melden</h1>
-    <p>Hallo, der M&uuml;lleimer ist &uuml;berf&uuml;llt? Sie m&ouml;chten das an den Betreiber melden?</p>
-    <p>Dann sind Sie hier genau richtig!</p>
-    <p>Der folgende Knopf &ouml;ffnet eine vorgefertigte E-Mail in Ihrer E-Mail-App. Sie m&uuml;ssen dann nur noch die
+    <h1 id="i18n-title">Report an Overflowing Waste Bin</h1>
+    <p id="i18n-bin-is-full">Hallo, der M&uuml;lleimer ist &uuml;berf&uuml;llt? Sie m&ouml;chten das an den Betreiber melden?</p>
+    <p id="i18n-right-place">Dann sind Sie hier genau richtig!</p>
+    <p id="i18n-opens-mail">Der folgende Knopf &ouml;ffnet eine vorgefertigte E-Mail in Ihrer E-Mail-App. Sie m&uuml;ssen dann nur noch die
         E-Mail absenden, um die &Uuml;berf&uuml;llung zu melden.</p>
     <p>
         <a id="mailElement">MELDUNG PER MAIL</a>
     </p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openlocationcode/1.0.3/openlocationcode.min.js"></script>
+    <script src="i18n.js"></script>
     <script>
         let currentUrlString = window.location.href;
         let currentUrl = new URL(currentUrlString);
