@@ -37,14 +37,23 @@
         let currentUrl = new URL(currentUrlString);
         let locCode = currentUrl.searchParams.get("code");
         let coord = OpenLocationCode.decode(locCode);
-        let mailElement = document.getElementById("mailElement");
         locCode = locCode.replace("+", "%252B");
-        mailElement.setAttribute("href", "mailto:postfach@mail.ch?subject=Meldung eines überfüllten öffentlichten Mülleimers&body=Sehr geehrte Damen und Herren%0D%0A%0D%0A" +
+        let mailAddress = currentUrl.searchParams.get("mail");
+        if(mailElement.endsWith("de")) {
+            mailElement.setAttribute("href", "mailto:" + mailAddress + "?subject=Meldung eines überfüllten öffentlichten Mülleimers&body=Sehr geehrte Damen und Herren%0D%0A%0D%0A" +
             "Der öffentliche Mülleimer mit der ID " + locCode + " ist überfüllt. Ich würde mich über eine Leerung freuen.%0D%0A" +
             "Dieser Mülleimer steht an den Koordinaten (WGS84): " + coord.latitudeCenter + " (Breite), " + coord.longitudeCenter + " (Länge).%0D%0A%0D%0A" +
             "Um die Position in Google Maps zu öffnen klicken Sie bitte hier: https://www.google.com/maps/place/" + locCode + "%0D%0A" +
             "Freundliche Grüsse%0D%0A" +
             "Ein aufmerksamer Bürger%0D%0A%0D%0A");
+        } else {
+            mailElement.setAttribute("href", "mailto:" + mailAddress + "?subject=Report of an overfilled public waste bin&body=Dear ladies and gentlemen%0D%0A%0D%0A" +
+            "The public waste bin with ID " + locCode + " is overfilled. I would appreciate an emptying.%0D%0A" +
+            "This waste is placed at the coordinates (WGS84): " + coord.latitudeCenter + " (latitude), " + coord.longitudeCenter + " (longitude).%0D%0A%0D%0A" +
+            "To open its position in Google Maps, click here: https://www.google.com/maps/place/" + locCode + "%0D%0A" +
+            "Kind regards%0D%0A" +
+            "An attentive citizen%0D%0A%0D%0A");
+        }
     </script>
 </body>
 
