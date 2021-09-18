@@ -12,6 +12,7 @@ if(lang.startsWith("de")) {
     document.getElementById("i18n-chosen-coord").innerHTML = "Ausgew&auml;hlte Koordinaten (WGS84): Breitengrad: <span id=\"latcoord\">0.0</span>, L&auml;ngengrad: <span id=\"loncoord\">0.0</span>";
     document.getElementById("i18n-provide-email").innerHTML = "Bitte geben Sie die E-Mail-Adresse des Betreibers ein. Dies ist oft eine Abteilung der Stadtverwaltung. Je passgenauer die E-Mail-Adresse ist, desto besser ist es.";
     document.getElementById("i18n-operator-email").innerHTML = "Betreiber-Mail*";
+    document.getElementById("i18n-create-button").value = "QR-Code erstellen";
 }
 
 let locCode = null;
