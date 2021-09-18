@@ -39,7 +39,7 @@
         let coord = OpenLocationCode.decode(locCode);
         locCode = locCode.replace("+", "%252B");
         let mailAddress = currentUrl.searchParams.get("mail");
-        if(mailElement.endsWith("de")) {
+        if(mailAddress.endsWith("de")) {
             mailElement.setAttribute("href", "mailto:" + mailAddress + "?subject=Meldung eines überfüllten öffentlichten Mülleimers&body=Sehr geehrte Damen und Herren%0D%0A%0D%0A" +
             "Der öffentliche Mülleimer mit der ID " + locCode + " ist überfüllt. Ich würde mich über eine Leerung freuen.%0D%0A" +
             "Dieser Mülleimer steht an den Koordinaten (WGS84): " + coord.latitudeCenter + " (Breite), " + coord.longitudeCenter + " (Länge).%0D%0A%0D%0A" +
